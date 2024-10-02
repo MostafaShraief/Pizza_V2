@@ -56,6 +56,8 @@ namespace Pizza2
             if (chk_green_peppers.Checked)
                 Price += Convert.ToInt32(chk_green_peppers.Tag);
 
+            Price = (Price * Convert.ToInt32(guna2NumericUpDown1.Value));
+
             lbl_price.Text = '$' + Price.ToString();
 
         }
@@ -289,5 +291,11 @@ namespace Pizza2
         {
             reset_new_form();
         }
+
+        private void guna2NumericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            calculate_total_price();
+        }
+
     }
 }
